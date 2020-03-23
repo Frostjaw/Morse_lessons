@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginLeft="8dp"
+    android:columnCount="10"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TableRow
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/button_32"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/button_37"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/button_34"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/button_35"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/button_36"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/button_37"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/button_38"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/button_28"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/button_30"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="0" />
+    </TableRow>
+
+
+    <TableRow
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/button_10"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="й" />
+
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ц" />
+
+        <Button
+            android:id="@+id/button_15"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="у" />
+
+        <Button
+            android:id="@+id/button_11"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="к" />
+
+        <Button
+            android:id="@+id/button_6"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="е" />
+
+        <Button
+            android:id="@+id/button_14"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="н" />
+
+        <Button
+            android:id="@+id/button_4"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="г" />
+
+        <Button
+            android:id="@+id/button_16"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ш" />
+
+        <Button
+            android:id="@+id/button_17"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="щ" />
+
+        <Button
+            android:id="@+id/button_8"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="з" />
+
+        <Button
+            android:id="@+id/button_15"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="х" />
+    </TableRow>
+
+
+    <TableRow
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/button_21"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ф" />
+
+        <Button
+            android:id="@+id/button_15"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ы" />
+
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="в" />
+
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="а" />
+
+        <Button
+            android:id="@+id/button_16"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="п" />
+
+        <Button
+            android:id="@+id/button_17"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="р" />
+
+        <Button
+            android:id="@+id/button_15"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="о" />
+
+        <Button
+            android:id="@+id/button_12"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="л" />
+
+        <Button
+            android:id="@+id/button_5"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="д" />
+
+        <Button
+            android:id="@+id/button_7"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ж" />
+
+        <Button
+            android:id="@+id/button_29"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="э" />
+    </TableRow>
+
+
+    <TableRow
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/button_32"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="я" />
+
+        <Button
+            android:id="@+id/button_37"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ч" />
+
+        <Button
+            android:id="@+id/button_34"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="с" />
+
+        <Button
+            android:id="@+id/button_35"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="м" />
+
+        <Button
+            android:id="@+id/button_36"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="и" />
+
+        <Button
+            android:id="@+id/button_37"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ч" />
+
+        <Button
+            android:id="@+id/button_38"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="т" />
+
+        <Button
+            android:id="@+id/button_28"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ь" />
+
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="б" />
+
+        <Button
+            android:id="@+id/button_30"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ю" />
+    </TableRow>
+
+</TableLayout>

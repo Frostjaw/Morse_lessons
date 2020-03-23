@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <application
+        android:name=".MorseCodeGenerator"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        <activity android:name=".TransmissionTrainerActivity"></activity>
+        <activity android:name=".ReceptionTrainerActivity" />
+        <activity android:name=".TrainerActivity" />
+        <activity android:name=".NavigationActivity" />
+        <activity android:name=".Lesson12TransmissionActivity" />
+        <activity android:name=".Lesson12ReceptionActivity" />
+        <activity android:name=".Lesson12LearningActivity" />
+        <activity android:name=".Lesson12Activity" />
+        <activity android:name=".Lesson11TransmissionActivity" />
+        <activity android:name=".Lesson11ReceptionActivity" />
+        <activity android:name=".Lesson11LearningActivity" />
+        <activity android:name=".Lesson11Activity" />
+        <activity android:name=".Lesson10TransmissionActivity" />
+        <activity android:name=".Lesson10ReceptionActivity" />
+        <activity android:name=".Lesson10LearningActivity" />
+        <activity android:name=".Lesson10Activity" />
+        <activity android:name=".Lesson9TransmissionActivity" />
+        <activity android:name=".Lesson9ReceptionActivity" />
+        <activity android:name=".Lesson9LearningActivity" />
+        <activity android:name=".Lesson9Activity" />
+        <activity android:name=".Lesson8TransmissionActivity" />
+        <activity android:name=".Lesson8ReceptionActivity" />
+        <activity android:name=".Lesson8LearningActivity" />
+        <activity android:name=".Lesson8Activity" />
+        <activity android:name=".Lesson7TransmissionActivity" />
+        <activity android:name=".Lesson7ReceptionActivity" />
+        <activity android:name=".Lesson7LearningActivity" />
+        <activity android:name=".Lesson7Activity" />
+        <activity android:name=".Lesson6TransmissionActivity" />
+        <activity android:name=".Lesson6ReceptionActivity" />
+        <activity android:name=".Lesson6LearningActivity" />
+        <activity android:name=".Lesson6Activity" />
+        <activity android:name=".Lesson5TransmissionActivity" />
+        <activity android:name=".Lesson5ReceptionActivity" />
+        <activity android:name=".Lesson5LearningActivity" />
+        <activity android:name=".Lesson5Activity" />
+        <activity android:name=".Lesson4TransmissionActivity" />
+        <activity android:name=".Lesson4ReceptionActivity" />
+        <activity android:name=".Lesson4LearningActivity" />
+        <activity android:name=".Lesson4Activity" />
+        <activity android:name=".Lesson3TransmissionActivity" />
+        <activity android:name=".Lesson3ReceptionActivity" />
+        <activity android:name=".Lesson3LearningActivity" />
+        <activity android:name=".Lesson3Activity" />
+        <activity android:name=".DictionaryActivity" />
+        <activity android:name=".Lesson2TransmissionActivity" />
+        <activity android:name=".Lesson2ReceptionActivity" />
+        <activity android:name=".Lesson2LearningActivity" />
+        <activity android:name=".Lesson2Activity" />
+        <activity android:name=".Lesson1Activity" />
+        <activity android:name=".Lesson1TransmissionActivity" />
+        <activity android:name=".Lesson1ReceptionActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Lesson1LearningActivity" />
+    </application>
+
+</manifest>

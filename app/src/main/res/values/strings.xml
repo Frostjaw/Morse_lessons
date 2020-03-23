@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Morse Lessons</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="transmission_title">Передача</string>
+    <string name="reception_title">Прием</string>
+    <string name="learning_title">Обучение</string>
+    <string name="start_button">Старт</string>
+    <string name="next_button">Дальше</string>
+    <string name="exit_button">Выход</string>
+    <string name="settings_title">Настройки</string>
+    <string name="trainer_button">Тренажер</string>
+    <string name="dictionary_button">Словарь</string>
+    <string name="lessons_title">Уроки</string>
+    <string name="dictionary_character_title">Символ</string>
+    <string name="dictionary_code_title">Код</string>
+    <string name="dictionary_chant_title">Напев</string>
+    <string name="listOfLessons_title">Список уроков</string>
+    <string name="menu_title">Меню</string>
+    <string name="all_letters">Все буквы</string>
+    <string name="all_numbers">Все цифры</string>
+    <string name="all_punctuation_marks">Все знаки препинания</string>
+    <string name="training_symbols">Символы для тренировки</string>
+    <string name="select_symbols_title">Выберите символы для тренировки</string>
+    <string name="select_symbols_button">Выбрать символы</string>
+    <string name="accept_settings_button">Ок</string>
+</resources>

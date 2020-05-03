@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".activities.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
     <Button
@@ -23,7 +23,7 @@
         android:id="@+id/button4"
         android:layout_width="150dp"
         android:layout_height="48dp"
-        android:onClick="showSettingsDialog"
+        android:onClick="openSettings"
         android:text="@string/settings_title"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"

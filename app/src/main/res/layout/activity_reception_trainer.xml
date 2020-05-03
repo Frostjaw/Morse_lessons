@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minHeight="40dp"
-    tools:context=".ReceptionTrainerActivity">
+    tools:context=".activities.trainer.CharacterReceptionTrainerActivity">
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -739,8 +739,8 @@
     <Button
         android:id="@+id/button16"
         style="@android:style/Widget.Material.Light.Button"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
@@ -752,8 +752,8 @@
     <Button
         android:id="@+id/button15"
         style="@android:style/Widget.Material.Light.Button"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
@@ -761,5 +761,17 @@
         android:onClick="showHelpDialog"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/repeat_sound"
+        android:onClick="repeatCharacter"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toStartOf="@+id/button15" />
 
 </android.support.constraint.ConstraintLayout>

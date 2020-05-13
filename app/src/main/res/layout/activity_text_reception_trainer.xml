@@ -32,10 +32,12 @@
         android:enabled="true"
         android:focusable="auto"
         android:gravity="center|top"
-        android:inputType="textMultiLine"
+        android:inputType="textMultiLine|textNoSuggestions"
         android:isScrollContainer="true"
         android:overScrollMode="always"
+        android:paddingLeft="8dp"
         android:paddingTop="8dp"
+        android:paddingRight="8dp"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
         android:scrollHorizontally="false"
@@ -58,13 +60,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/hideCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/show_text_button"
+        android:text="@string/hide_text_button"
         app:layout_constraintBottom_toTopOf="@+id/text_textView"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -88,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="38dp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        app:layout_constraintBottom_toTopOf="@+id/hideCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />

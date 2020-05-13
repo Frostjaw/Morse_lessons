@@ -3,7 +3,6 @@ package com.example.myapplication.utils;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.os.Handler;
-import android.util.Log;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -22,6 +21,8 @@ public class MorseCodeGenerator extends Application {
     public final Map<Integer, String> morseDictionary = new HashMap<>();
     public final Map<String, Integer> inverseMorseDictionary = new HashMap<>();
     public boolean characterPoolIsEmpty;
+    private String generatedText;
+    private final Map<Integer, Integer> delayArray = new HashMap<>();
 
     // Logs
     final String LOG_TAG = "myLogs";
@@ -38,119 +39,10 @@ public class MorseCodeGenerator extends Application {
         handler = new Handler();
         characterIndexPool = new ArrayList<>();
         characterPoolIsEmpty = true;
-        
-        morseDictionary.put(1,"А");
-        inverseMorseDictionary.put("А", 1);
-        morseDictionary.put(2,"Б");
-        inverseMorseDictionary.put("Б", 2);
-        morseDictionary.put(3,"В");
-        inverseMorseDictionary.put("В", 3);
-        morseDictionary.put(4,"Г");
-        inverseMorseDictionary.put("Г", 4);
-        morseDictionary.put(5,"Д");
-        inverseMorseDictionary.put("Д", 5);
-        morseDictionary.put(6,"Е");
-        inverseMorseDictionary.put("Е", 6);
-        morseDictionary.put(7,"Ж");
-        inverseMorseDictionary.put("Ж", 7);
-        morseDictionary.put(8,"З");
-        inverseMorseDictionary.put("З", 8);
-        morseDictionary.put(9,"И");
-        inverseMorseDictionary.put("И", 9);
-        morseDictionary.put(10,"Й");
-        inverseMorseDictionary.put("Й", 10);
-        morseDictionary.put(11,"К");
-        inverseMorseDictionary.put("К", 11);
-        morseDictionary.put(12,"Л");
-        inverseMorseDictionary.put("Л", 12);
-        morseDictionary.put(13,"М");
-        inverseMorseDictionary.put("М", 13);
-        morseDictionary.put(14,"Н");
-        inverseMorseDictionary.put("Н", 14);
-        morseDictionary.put(15,"О");
-        inverseMorseDictionary.put("О", 15);
-        morseDictionary.put(16,"П");
-        inverseMorseDictionary.put("П", 16);
-        morseDictionary.put(17,"Р");
-        inverseMorseDictionary.put("Р", 17);
-        morseDictionary.put(18,"С");
-        inverseMorseDictionary.put("С", 18);
-        morseDictionary.put(19,"Т");
-        inverseMorseDictionary.put("Т", 19);
-        morseDictionary.put(20,"У");
-        inverseMorseDictionary.put("У", 20);
-        morseDictionary.put(21,"Ф");
-        inverseMorseDictionary.put("Ф", 21);
-        morseDictionary.put(22,"Х");
-        inverseMorseDictionary.put("Х", 22);
-        morseDictionary.put(23,"Ц");
-        inverseMorseDictionary.put("Ц", 23);
-        morseDictionary.put(24,"Ч");
-        inverseMorseDictionary.put("Ч", 24);
-        morseDictionary.put(25,"Ш");
-        inverseMorseDictionary.put("Ш", 25);
-        morseDictionary.put(26,"Щ");
-        inverseMorseDictionary.put("Щ", 26);
-        morseDictionary.put(27,"Ы");
-        inverseMorseDictionary.put("Ы", 27);
-        morseDictionary.put(28,"Ь");
-        inverseMorseDictionary.put("Ь", 28);
-        morseDictionary.put(29,"Э");
-        inverseMorseDictionary.put("Э", 29);
-        morseDictionary.put(30,"Ю");
-        inverseMorseDictionary.put("Ю", 30);
-        morseDictionary.put(31,"Я");
-        inverseMorseDictionary.put("Я", 31);
-        morseDictionary.put(32,"1");
-        inverseMorseDictionary.put("1", 32);
-        morseDictionary.put(33,"2");
-        inverseMorseDictionary.put("2", 33);
-        morseDictionary.put(34,"3");
-        inverseMorseDictionary.put("3", 34);
-        morseDictionary.put(35,"4");
-        inverseMorseDictionary.put("4", 35);
-        morseDictionary.put(36,"5");
-        inverseMorseDictionary.put("5", 36);
-        morseDictionary.put(37,"6");
-        inverseMorseDictionary.put("6", 37);
-        morseDictionary.put(38,"7");
-        inverseMorseDictionary.put("7", 38);
-        morseDictionary.put(39,"8");
-        inverseMorseDictionary.put("8", 39);
-        morseDictionary.put(40,"9");
-        inverseMorseDictionary.put("9", 40);
-        morseDictionary.put(41,"0");
-        inverseMorseDictionary.put("0", 41);
-        morseDictionary.put(42,".");
-        inverseMorseDictionary.put(".", 42);
-        morseDictionary.put(43,",");
-        inverseMorseDictionary.put(",", 43);
-        morseDictionary.put(44,":");
-        inverseMorseDictionary.put(":", 44);
-        morseDictionary.put(45,";");
-        inverseMorseDictionary.put(";", 45);
-        morseDictionary.put(46,"( )");
-        inverseMorseDictionary.put("( )", 46);
-        morseDictionary.put(47,"'");
-        inverseMorseDictionary.put("'", 47);
-        morseDictionary.put(48,"\" \"");
-        inverseMorseDictionary.put("\" \"", 48);
-        morseDictionary.put(49,"-");
-        inverseMorseDictionary.put("-", 49);
-        morseDictionary.put(50,"/");
-        inverseMorseDictionary.put("/", 50);
-        morseDictionary.put(51,"?");
-        inverseMorseDictionary.put("?", 51);
-        morseDictionary.put(52,"!");
-        inverseMorseDictionary.put("!", 52);
-        morseDictionary.put(53,"Знак раздела");
-        inverseMorseDictionary.put("Знак раздела", 53);
-        morseDictionary.put(54,"Ошибка/перебой");
-        inverseMorseDictionary.put("Ошибка/перебой", 54);
-        morseDictionary.put(55,"@");
-        inverseMorseDictionary.put("@", 55);
-        morseDictionary.put(56,"Конец связи");
-        inverseMorseDictionary.put("Конец связи", 56);
+
+        initDelayArray();
+        initMorseDictionary();
+        initInverseMorseDictionary();
     }
 
     public static MorseCodeGenerator getMorseCodeGenerator(){
@@ -939,7 +831,7 @@ public class MorseCodeGenerator extends Application {
 
         if (!characterIndexPool.isEmpty()) {
             Random random = new Random();
-            int curIndex = random.nextInt(characterIndexPool.size()) + 1;
+            int curIndex = random.nextInt(characterIndexPool.size());
             playConcrete(characterIndexPool.get(curIndex));
 
             return characterIndexPool.get(curIndex);
@@ -952,7 +844,7 @@ public class MorseCodeGenerator extends Application {
 
         if (!characterIndexPool.isEmpty()) {
             Random random = new Random();
-            int curIndex = random.nextInt(characterIndexPool.size()) + 1;
+            int curIndex = random.nextInt(characterIndexPool.size());
 
             return characterIndexPool.get(curIndex);
         }
@@ -961,19 +853,44 @@ public class MorseCodeGenerator extends Application {
     }
 
     public String generateRandomText(int numberOfGroups) {
+        generatedText = "";
         StringBuilder text = new StringBuilder();
         if (!characterIndexPool.isEmpty()) {
             Random random = new Random();
             for (int i = 0; i < numberOfGroups; i++) {
                 for (int j = 0; j < 5; j++) {
-                    int curCharacterIndex = random.nextInt(characterIndexPool.size()) + 1;
+                    int curIndex = random.nextInt(characterIndexPool.size());
+                    int curCharacterIndex = characterIndexPool.get(curIndex);
                     text.append(morseDictionary.get(curCharacterIndex));
-                    Log.d(LOG_TAG, String.valueOf(curCharacterIndex));
                 }
                 text.append(" ");
             }
         }
-        return text.toString();
+        generatedText = text.toString();
+
+        return generatedText;
+    }
+
+    public void playText(String text) {
+        String curChar = String.valueOf(text.charAt(0));
+        int curCharIndex = inverseMorseDictionary.get(curChar);
+        playConcrete(curCharIndex);
+        handler.postDelayed(() -> playCharacterFromTextAtIndex(text, 1), dotDuration *(delayArray.get(curCharIndex) + 3));
+    }
+
+    private void playCharacterFromTextAtIndex(String text, int index) {
+        String curChar = String.valueOf(text.charAt(index));
+        int nextIndex = index + 1;
+        if (!curChar.equals(" ")) {
+            int curCharIndex = inverseMorseDictionary.get(curChar);
+            playConcrete(curCharIndex);
+
+            if (nextIndex < text.length()){
+                handler.postDelayed(() -> playCharacterFromTextAtIndex(text, index + 1), dotDuration *(delayArray.get(curCharIndex) + 3));
+            }
+        } else if (nextIndex < text.length()){
+            handler.postDelayed(() -> playCharacterFromTextAtIndex(text, index + 1), dotDuration *5);
+        }
     }
 
     public void start(){
@@ -982,5 +899,183 @@ public class MorseCodeGenerator extends Application {
 
     public void stop(){
         soundGenerator.stop();
+    }
+
+    //test
+    private void initDelayArray() {
+        delayArray.put(1, 5);
+        delayArray.put(2, 9);
+        delayArray.put(3, 9);
+        delayArray.put(4, 9);
+        delayArray.put(5, 7);
+        delayArray.put(6, 1);
+        delayArray.put(7, 9);
+        delayArray.put(8, 11);
+        delayArray.put(9, 3);
+        delayArray.put(10, 13);
+        delayArray.put(11, 9);
+        delayArray.put(12, 9);
+        delayArray.put(13, 7);
+        delayArray.put(14, 5);
+        delayArray.put(15, 11);
+        delayArray.put(16, 11);
+        delayArray.put(17, 7);
+        delayArray.put(18, 5);
+        delayArray.put(19, 3);
+        delayArray.put(20, 7);
+        delayArray.put(21, 9);
+        delayArray.put(22, 7);
+        delayArray.put(23, 11);
+        delayArray.put(24, 13);
+        delayArray.put(25, 15);
+        delayArray.put(26, 13);
+        delayArray.put(27, 13);
+        delayArray.put(28, 11);
+        delayArray.put(29, 11);
+        delayArray.put(30, 11);
+        delayArray.put(31, 11);
+        delayArray.put(32, 17);
+        delayArray.put(33, 15);
+        delayArray.put(34, 13);
+        delayArray.put(35, 11);
+        delayArray.put(36, 9);
+        delayArray.put(37, 11);
+        delayArray.put(38, 13);
+        delayArray.put(39, 15);
+        delayArray.put(40, 17);
+        delayArray.put(41, 19);
+        delayArray.put(42, 11);
+        delayArray.put(43, 17);
+        delayArray.put(44, 17);
+        delayArray.put(45, 17);
+        delayArray.put(46, 19);
+        delayArray.put(47, 19);
+        delayArray.put(48, 15);
+        delayArray.put(49, 15);
+        delayArray.put(50, 13);
+        delayArray.put(51, 15);
+        delayArray.put(52, 19);
+        delayArray.put(53, 13);
+        delayArray.put(54, 15);
+        delayArray.put(55, 17);
+        delayArray.put(56, 13);
+    }
+
+    private void initMorseDictionary() {
+        morseDictionary.put(1,"А");
+        morseDictionary.put(2,"Б");
+        morseDictionary.put(3,"В");
+        morseDictionary.put(4,"Г");
+        morseDictionary.put(5,"Д");
+        morseDictionary.put(6,"Е");
+        morseDictionary.put(7,"Ж");
+        morseDictionary.put(8,"З");
+        morseDictionary.put(9,"И");
+        morseDictionary.put(10,"Й");
+        morseDictionary.put(11,"К");
+        morseDictionary.put(12,"Л");
+        morseDictionary.put(13,"М");
+        morseDictionary.put(14,"Н");
+        morseDictionary.put(15,"О");
+        morseDictionary.put(16,"П");
+        morseDictionary.put(17,"Р");
+        morseDictionary.put(18,"С");
+        morseDictionary.put(19,"Т");
+        morseDictionary.put(20,"У");
+        morseDictionary.put(21,"Ф");
+        morseDictionary.put(22,"Х");
+        morseDictionary.put(23,"Ц");
+        morseDictionary.put(24,"Ч");
+        morseDictionary.put(25,"Ш");
+        morseDictionary.put(26,"Щ");
+        morseDictionary.put(27,"Ы");
+        morseDictionary.put(28,"Ь");
+        morseDictionary.put(29,"Э");
+        morseDictionary.put(30,"Ю");
+        morseDictionary.put(31,"Я");
+        morseDictionary.put(32,"1");
+        morseDictionary.put(33,"2");
+        morseDictionary.put(34,"3");
+        morseDictionary.put(35,"4");
+        morseDictionary.put(36,"5");
+        morseDictionary.put(37,"6");
+        morseDictionary.put(38,"7");
+        morseDictionary.put(39,"8");
+        morseDictionary.put(40,"9");
+        morseDictionary.put(41,"0");
+        morseDictionary.put(42,".");
+        morseDictionary.put(43,",");
+        morseDictionary.put(44,":");
+        morseDictionary.put(45,";");
+        morseDictionary.put(46,"( )");
+        morseDictionary.put(47,"'");
+        morseDictionary.put(48,"\" \"");
+        morseDictionary.put(49,"-");
+        morseDictionary.put(50,"/");
+        morseDictionary.put(51,"?");
+        morseDictionary.put(52,"!");
+        morseDictionary.put(53,"Знак раздела");
+        morseDictionary.put(54,"Ошибка/перебой");
+        morseDictionary.put(55,"@");
+        morseDictionary.put(56,"Конец связи");
+    }
+
+    private void initInverseMorseDictionary() {
+        inverseMorseDictionary.put("А", 1);
+        inverseMorseDictionary.put("Б", 2);
+        inverseMorseDictionary.put("В", 3);
+        inverseMorseDictionary.put("Г", 4);
+        inverseMorseDictionary.put("Д", 5);
+        inverseMorseDictionary.put("Е", 6);
+        inverseMorseDictionary.put("Ж", 7);
+        inverseMorseDictionary.put("З", 8);
+        inverseMorseDictionary.put("И", 9);
+        inverseMorseDictionary.put("Й", 10);
+        inverseMorseDictionary.put("К", 11);
+        inverseMorseDictionary.put("Л", 12);
+        inverseMorseDictionary.put("М", 13);
+        inverseMorseDictionary.put("Н", 14);
+        inverseMorseDictionary.put("О", 15);
+        inverseMorseDictionary.put("П", 16);
+        inverseMorseDictionary.put("Р", 17);
+        inverseMorseDictionary.put("С", 18);
+        inverseMorseDictionary.put("Т", 19);
+        inverseMorseDictionary.put("У", 20);
+        inverseMorseDictionary.put("Ф", 21);
+        inverseMorseDictionary.put("Х", 22);
+        inverseMorseDictionary.put("Ц", 23);
+        inverseMorseDictionary.put("Ч", 24);
+        inverseMorseDictionary.put("Ш", 25);
+        inverseMorseDictionary.put("Щ", 26);
+        inverseMorseDictionary.put("Ы", 27);
+        inverseMorseDictionary.put("Ь", 28);
+        inverseMorseDictionary.put("Э", 29);
+        inverseMorseDictionary.put("Ю", 30);
+        inverseMorseDictionary.put("Я", 31);
+        inverseMorseDictionary.put("1", 32);
+        inverseMorseDictionary.put("2", 33);
+        inverseMorseDictionary.put("3", 34);
+        inverseMorseDictionary.put("4", 35);
+        inverseMorseDictionary.put("5", 36);
+        inverseMorseDictionary.put("6", 37);
+        inverseMorseDictionary.put("7", 38);
+        inverseMorseDictionary.put("8", 39);
+        inverseMorseDictionary.put("9", 40);
+        inverseMorseDictionary.put("0", 41);
+        inverseMorseDictionary.put(".", 42);
+        inverseMorseDictionary.put(",", 43);
+        inverseMorseDictionary.put(":", 44);
+        inverseMorseDictionary.put(";", 45);
+        inverseMorseDictionary.put("( )", 46);
+        inverseMorseDictionary.put("'", 47);
+        inverseMorseDictionary.put("\" \"", 48);
+        inverseMorseDictionary.put("-", 49);
+        inverseMorseDictionary.put("/", 50);
+        inverseMorseDictionary.put("?", 51);
+        inverseMorseDictionary.put("!", 52);
+        inverseMorseDictionary.put("Знак раздела", 53);
+        inverseMorseDictionary.put("Ошибка/перебой", 54);
+        inverseMorseDictionary.put("@", 55);
+        inverseMorseDictionary.put("Конец связи", 56);
     }
 }

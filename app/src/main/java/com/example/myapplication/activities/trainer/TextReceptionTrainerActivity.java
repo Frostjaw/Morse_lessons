@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
@@ -33,6 +35,19 @@ public class TextReceptionTrainerActivity extends TrainerActivity
         textTextView.setMovementMethod(new ScrollingMovementMethod());
 
         alertTextView = findViewById(R.id.alert_textView);
+
+        CheckBox hideCheckBox = findViewById(R.id.hideCheckBox);
+        hideCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    hideTextView();
+                } else {
+                    showTextView();
+                }
+            }
+        });
+
     }
 
     @Override
@@ -88,8 +103,16 @@ public class TextReceptionTrainerActivity extends TrainerActivity
             alertTextView.setText("Выберите количество групп");
         } else {
             alertTextView.setText("");
-            //here
+            morseCodeGenerator.playText(currentText);
         }
+    }
+
+    private void hideTextView() {
+        textTextView.setText("");
+    }
+
+    private void showTextView() {
+        textTextView.setText(currentText);
     }
 
 }

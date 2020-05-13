@@ -33,4 +33,5 @@
     <string name="show_text_button">Показать текст</string>
     <string name="create_text_button">Создать текст</string>
     <string name="group_number_title">Количество групп:</string>
+    <string name="hide_text_button">Скрыть текст</string>
 </resources>

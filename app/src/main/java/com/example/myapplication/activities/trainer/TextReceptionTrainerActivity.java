@@ -103,6 +103,7 @@ public class TextReceptionTrainerActivity extends TrainerActivity
             alertTextView.setText("Выберите количество групп");
         } else {
             alertTextView.setText("");
+            //morseCodeGenerator.playText(currentText);
             morseCodeGenerator.playText(currentText);
         }
     }

@@ -21,7 +21,7 @@ public class MorseCodeGenerator extends Application {
     public final Map<Integer, String> morseDictionary = new HashMap<>();
     public final Map<String, Integer> inverseMorseDictionary = new HashMap<>();
     public boolean characterPoolIsEmpty;
-    private String generatedText;
+    private ArrayList<Integer> generatedTextIndexes;
     private final Map<Integer, Integer> delayArray = new HashMap<>();
 
     // Logs
@@ -38,6 +38,7 @@ public class MorseCodeGenerator extends Application {
         dotDuration = settings.getInt("DotDuration", 150);
         handler = new Handler();
         characterIndexPool = new ArrayList<>();
+        generatedTextIndexes = new ArrayList<>();
         characterPoolIsEmpty = true;
 
         initDelayArray();
@@ -853,7 +854,7 @@ public class MorseCodeGenerator extends Application {
     }
 
     public String generateRandomText(int numberOfGroups) {
-        generatedText = "";
+        generatedTextIndexes.clear();
         StringBuilder text = new StringBuilder();
         if (!characterIndexPool.isEmpty()) {
             Random random = new Random();
@@ -861,35 +862,34 @@ public class MorseCodeGenerator extends Application {
                 for (int j = 0; j < 5; j++) {
                     int curIndex = random.nextInt(characterIndexPool.size());
                     int curCharacterIndex = characterIndexPool.get(curIndex);
+
+                    generatedTextIndexes.add(curCharacterIndex);
                     text.append(morseDictionary.get(curCharacterIndex));
                 }
+                generatedTextIndexes.add(-1);
                 text.append(" ");
             }
         }
-        generatedText = text.toString();
-
-        return generatedText;
+        return text.toString();
     }
 
     public void playText(String text) {
-        String curChar = String.valueOf(text.charAt(0));
-        int curCharIndex = inverseMorseDictionary.get(curChar);
+        int curCharIndex = generatedTextIndexes.get(0);
         playConcrete(curCharIndex);
         handler.postDelayed(() -> playCharacterFromTextAtIndex(text, 1), dotDuration *(delayArray.get(curCharIndex) + 3));
     }
 
     private void playCharacterFromTextAtIndex(String text, int index) {
-        String curChar = String.valueOf(text.charAt(index));
+        int curCharIndex = generatedTextIndexes.get(index);
         int nextIndex = index + 1;
-        if (!curChar.equals(" ")) {
-            int curCharIndex = inverseMorseDictionary.get(curChar);
+        if (curCharIndex != -1) {
             playConcrete(curCharIndex);
 
-            if (nextIndex < text.length()){
-                handler.postDelayed(() -> playCharacterFromTextAtIndex(text, index + 1), dotDuration *(delayArray.get(curCharIndex) + 3));
+            if (nextIndex < generatedTextIndexes.size()){
+                handler.postDelayed(() -> playCharacterFromTextAtIndex(text, nextIndex), dotDuration *(delayArray.get(curCharIndex) + 3));
             }
-        } else if (nextIndex < text.length()){
-            handler.postDelayed(() -> playCharacterFromTextAtIndex(text, index + 1), dotDuration *5);
+        } else if (nextIndex < generatedTextIndexes.size()){
+            handler.postDelayed(() -> playCharacterFromTextAtIndex(text, nextIndex), dotDuration *5);
         }
     }
 

@@ -32,7 +32,7 @@ public class CharacterTransmissionTrainerActivity extends TrainerActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transmission_trainer);
+        setContentView(R.layout.activity_character_transmission_trainer);
 
         launchActivityWithoutNavigation();
         chooseCharactersDialog = new ChooseCharactersDialog();
@@ -77,7 +77,7 @@ public class CharacterTransmissionTrainerActivity extends TrainerActivity
     }
 
     public void showSettingsDialog(View view) {
-        openSettingsDialog(view);
+        openChooseCharactersDialog(view);
     }
 
     public void showHelpDialog(View view) {

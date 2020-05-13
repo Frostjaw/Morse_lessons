@@ -3,6 +3,7 @@ package com.example.myapplication.utils;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.os.Handler;
+import android.util.Log;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -938,7 +939,7 @@ public class MorseCodeGenerator extends Application {
 
         if (!characterIndexPool.isEmpty()) {
             Random random = new Random();
-            int curIndex = random.nextInt(characterIndexPool.size() + 1);
+            int curIndex = random.nextInt(characterIndexPool.size()) + 1;
             playConcrete(characterIndexPool.get(curIndex));
 
             return characterIndexPool.get(curIndex);
@@ -951,12 +952,28 @@ public class MorseCodeGenerator extends Application {
 
         if (!characterIndexPool.isEmpty()) {
             Random random = new Random();
-            int curIndex = random.nextInt(characterIndexPool.size() + 1);
+            int curIndex = random.nextInt(characterIndexPool.size()) + 1;
 
             return characterIndexPool.get(curIndex);
         }
 
         return -1;
+    }
+
+    public String generateRandomText(int numberOfGroups) {
+        StringBuilder text = new StringBuilder();
+        if (!characterIndexPool.isEmpty()) {
+            Random random = new Random();
+            for (int i = 0; i < numberOfGroups; i++) {
+                for (int j = 0; j < 5; j++) {
+                    int curCharacterIndex = random.nextInt(characterIndexPool.size()) + 1;
+                    text.append(morseDictionary.get(curCharacterIndex));
+                    Log.d(LOG_TAG, String.valueOf(curCharacterIndex));
+                }
+                text.append(" ");
+            }
+        }
+        return text.toString();
     }
 
     public void start(){

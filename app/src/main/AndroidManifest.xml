@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        <activity android:name=".activities.trainer.CharacterTransmissionTrainerActivity"/>
+        <activity android:name=".activities.trainer.TextTransmissionTrainerActivity"></activity>
+        <activity android:name=".activities.trainer.TextReceptionTrainerActivity" />
+        <activity android:name=".activities.trainer.CharacterTransmissionTrainerActivity" />
         <activity android:name=".activities.trainer.CharacterReceptionTrainerActivity" />
         <activity android:name=".activities.trainer.MainTrainerActivity" />
         <activity android:name=".activities.NavigationActivity" />

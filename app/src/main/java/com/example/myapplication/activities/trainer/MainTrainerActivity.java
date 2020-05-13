@@ -15,13 +15,24 @@ public class MainTrainerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_trainer);
     }
 
-    public void openReceptionTrainer(View view){
+    public void openCharacterReceptionTrainer(View view){
         Intent intent = new Intent(this, CharacterReceptionTrainerActivity.class);
         startActivity(intent);
     }
 
-    public void openTransmissionTrainer(View view){
+    public void openCharacterTransmissionTrainer(View view){
         Intent intent = new Intent(this, CharacterTransmissionTrainerActivity.class);
         startActivity(intent);
     }
+
+    public void openTextReceptionTrainer(View view){
+        Intent intent = new Intent(this, TextReceptionTrainerActivity.class);
+        startActivity(intent);
+    }
+
+    public void openTextTransmissionTrainer(View view){
+        Intent intent = new Intent(this, TextTransmissionTrainerActivity.class);
+        startActivity(intent);
+    }
+
 }

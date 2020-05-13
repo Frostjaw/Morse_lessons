@@ -21,7 +21,7 @@ public class CharacterReceptionTrainerActivity extends TrainerActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reception_trainer);
+        setContentView(R.layout.activity_character_reception_trainer);
 
         launchActivityWithoutNavigation();
         answerTextView = findViewById(R.id.answer_textView);
@@ -73,7 +73,7 @@ public class CharacterReceptionTrainerActivity extends TrainerActivity
     }
 
     public void showSettingsDialog(View view) {
-        openSettingsDialog(view);
+        openChooseCharactersDialog(view);
     }
 
     public void showHelpDialog(View view) {

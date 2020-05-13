@@ -6,11 +6,13 @@ import android.view.View;
 
 import com.example.myapplication.activities.MyActivity;
 import com.example.myapplication.dialogs.ChooseCharactersDialog;
+import com.example.myapplication.dialogs.ExtendedChooseCharactersDialog;
 import com.example.myapplication.dialogs.HelpDialog;
 
 public abstract class TrainerActivity extends MyActivity {
 
     private DialogFragment chooseCharactersDialog;
+    private DialogFragment extendedChooseCharactersDialog;
     private DialogFragment helpDialog;
 
     // Logs
@@ -22,11 +24,16 @@ public abstract class TrainerActivity extends MyActivity {
 
         launchActivityWithoutNavigation();
         chooseCharactersDialog = new ChooseCharactersDialog();
+        extendedChooseCharactersDialog = new ExtendedChooseCharactersDialog();
         helpDialog = new HelpDialog();
     }
 
-    public void openSettingsDialog(View view) {
+    public void openChooseCharactersDialog(View view) {
         chooseCharactersDialog.show(getSupportFragmentManager(), "choose_characters_dialog");
+    }
+
+    public void openExtendedChooseCharactersDialog(View view) {
+        extendedChooseCharactersDialog.show(getSupportFragmentManager(), "extended_choose_characters_dialog");
     }
 
     public void openHelpDialog(View view) {

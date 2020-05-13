@@ -24,4 +24,13 @@
     <string name="select_symbols_title">Выберите символы для тренировки</string>
     <string name="select_symbols_button">Выбрать символы</string>
     <string name="accept_settings_button">Ок</string>
+    <string name="character_reception_title">Прием символов</string>
+    <string name="text_reception_title">Прием текстов</string>
+    <string name="character_transmission_title">Передача символов</string>
+    <string name="text_transmission_title">Передача текстов</string>
+    <string name="characters_title">Символы</string>
+    <string name="texts_title">Тексты</string>
+    <string name="show_text_button">Показать текст</string>
+    <string name="create_text_button">Создать текст</string>
+    <string name="group_number_title">Количество групп:</string>
 </resources>

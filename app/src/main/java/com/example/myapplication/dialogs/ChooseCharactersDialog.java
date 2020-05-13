@@ -19,10 +19,10 @@ public class ChooseCharactersDialog extends DialogFragment implements OnClickLis
     final String LOG_TAG = "myLogs";
 
     // interface for communicate between dialog and activity
-    OnCharactersSelectedListener callback;
+    OnCharactersSelectedListener charactersCallback;
 
     public void setOnCharactersSelectedListener(OnCharactersSelectedListener callback) {
-        this.callback = callback;
+        this.charactersCallback = callback;
     }
 
     public interface OnCharactersSelectedListener {
@@ -107,7 +107,7 @@ public class ChooseCharactersDialog extends DialogFragment implements OnClickLis
                 // selectedCharacters[0] - characters without punctuations marks
                 // selectedCharacters[1] - punctuations marks
                 String[] selectedCharacters = findPunctuationMarks(characters);
-                callback.onCharactersSelected(selectedCharacters);
+                charactersCallback.onCharactersSelected(selectedCharacters);
 
                 dismiss();
             }
@@ -131,7 +131,7 @@ public class ChooseCharactersDialog extends DialogFragment implements OnClickLis
         //Log.d(LOG_TAG, "ChooseCharactersDialog: onCancel");
     }
 
-    private String[] findPunctuationMarks(String characters){
+    protected String[] findPunctuationMarks(String characters){
         String stringWithoutPunctuationMarks = characters;
         String punctuationMarks = "";
 

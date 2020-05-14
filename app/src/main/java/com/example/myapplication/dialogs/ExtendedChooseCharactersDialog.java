@@ -1,5 +1,6 @@
 package com.example.myapplication.dialogs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import com.example.myapplication.R;
+import com.example.myapplication.activities.SettingsActivity;
 
 public class ExtendedChooseCharactersDialog extends ChooseCharactersDialog {
 
@@ -30,6 +32,16 @@ public class ExtendedChooseCharactersDialog extends ChooseCharactersDialog {
 
         EditText charactersEditText = view.findViewById(R.id.characters_editText);
         EditText groupNumberEditText = view.findViewById(R.id.group_number_editText);
+
+        // settings button
+        Button openGlobalSettingsButton = view.findViewById(R.id.global_settings_button);
+        openGlobalSettingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // letters
         CheckBox lettersCheckBox = view.findViewById(R.id.letters_checkBox);

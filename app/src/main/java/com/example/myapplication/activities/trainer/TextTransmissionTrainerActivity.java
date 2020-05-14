@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +19,7 @@ public class TextTransmissionTrainerActivity extends TrainerActivity
         implements ChooseCharactersDialog.OnCharactersSelectedListener,
         ExtendedChooseCharactersDialog.OnGroupNumberSelectedListener {
 
-    protected int curCharacter;
+    protected int curCharacter = 0;
     protected Checker checker;
     protected TextView answerTextView;
     private TextView textTextView;
@@ -42,6 +43,7 @@ public class TextTransmissionTrainerActivity extends TrainerActivity
 
         answerTextView = findViewById(R.id.answer_textView);
         textTextView = findViewById(R.id.text_textView);
+        textTextView.setMovementMethod(new ScrollingMovementMethod());
 
         checker = new Checker(answerTextView);
         // Listener для кнопки

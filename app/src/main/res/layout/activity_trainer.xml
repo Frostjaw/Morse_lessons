@@ -8,11 +8,11 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:onClick="openCharacterReceptionTrainer"
-        android:text="@string/character_reception_title"
+        android:text="@string/reception_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/button14"
@@ -22,11 +22,11 @@
 
     <Button
         android:id="@+id/button14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="96dp"
         android:onClick="openCharacterTransmissionTrainer"
-        android:text="@string/character_transmission_title"
+        android:text="@string/transmission_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,11 +35,11 @@
 
     <Button
         android:id="@+id/button21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:onClick="openTextReceptionTrainer"
-        android:text="@string/text_reception_title"
+        android:text="@string/reception_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/button23"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,11 +48,11 @@
 
     <Button
         android:id="@+id/button23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="111dp"
         android:onClick="openTextTransmissionTrainer"
-        android:text="@string/text_transmission_title"
+        android:text="@string/transmission_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

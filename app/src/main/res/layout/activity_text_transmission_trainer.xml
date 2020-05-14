@@ -55,7 +55,7 @@
         android:scrollbars="vertical"
         android:scrollHorizontally="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:verticalScrollbarPosition="defaultPosition"
+        android:verticalScrollbarPosition="right"
         app:layout_constraintBottom_toTopOf="@+id/key_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

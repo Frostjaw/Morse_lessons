@@ -6,7 +6,7 @@
     <string name="reception_title">Прием</string>
     <string name="learning_title">Обучение</string>
     <string name="start_button">Старт</string>
-    <string name="next_button">Дальше</string>
+    <string name="next_button">Далее</string>
     <string name="exit_button">Выход</string>
     <string name="settings_title">Настройки</string>
     <string name="trainer_button">Тренажер</string>
@@ -23,7 +23,7 @@
     <string name="training_symbols">Символы для тренировки</string>
     <string name="select_symbols_title">Выберите символы для тренировки</string>
     <string name="select_symbols_button">Выбрать символы</string>
-    <string name="accept_settings_button">Ок</string>
+    <string name="accept_settings_button">ОК</string>
     <string name="character_reception_title">Прием символов</string>
     <string name="text_reception_title">Прием текстов</string>
     <string name="character_transmission_title">Передача символов</string>

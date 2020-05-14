@@ -14,13 +14,16 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:divider="@color/cardview_dark_background"
+            android:showDividers="middle"
             android:shrinkColumns="*"
             android:stretchColumns="*">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center">
+                android:gravity="center"
+                android:padding="4dp">
 
                 <TextView
                     android:id="@+id/textView"
@@ -56,39 +59,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textSize="24sp"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="197dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textSize="24sp"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textSize="24sp"
-                    android:typeface="serif" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -118,7 +93,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -148,7 +127,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -178,7 +161,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -208,7 +195,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -238,7 +229,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -268,7 +263,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -298,7 +297,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -328,7 +331,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -358,7 +365,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -388,7 +399,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -418,7 +433,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -448,7 +467,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -478,7 +501,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -508,7 +535,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -538,7 +569,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -568,7 +603,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -598,7 +637,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -628,7 +671,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -658,7 +705,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -688,7 +739,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -718,7 +773,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -748,7 +807,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -778,7 +841,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -808,7 +875,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -838,7 +909,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -868,7 +943,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -898,7 +977,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -928,7 +1011,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -958,7 +1045,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -988,7 +1079,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1018,7 +1113,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1048,7 +1147,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1078,7 +1181,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1108,7 +1215,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1138,7 +1249,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1168,7 +1283,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1198,7 +1317,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1228,7 +1351,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1258,7 +1385,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1288,7 +1419,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1318,7 +1453,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -1348,7 +1487,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1378,7 +1521,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1408,7 +1555,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1438,7 +1589,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1468,7 +1623,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1498,7 +1657,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1528,7 +1691,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1558,7 +1725,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1588,7 +1759,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1618,7 +1793,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1648,7 +1827,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1678,7 +1861,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1708,7 +1895,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"
@@ -1738,7 +1929,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/cardview_dark_background"
+                android:dividerPadding="-4dp"
+                android:padding="4dp"
+                android:showDividers="middle">
 
                 <TextView
                     android:id="@+id/textView25"

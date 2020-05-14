@@ -39,7 +39,6 @@ public class ChooseCharactersDialog extends DialogFragment implements OnClickLis
         EditText charactersEditText = view.findViewById(R.id.characters_editText);
 
         // settings button
-
         Button openGlobalSettingsButton = view.findViewById(R.id.global_settings_button);
         openGlobalSettingsButton.setOnClickListener(new OnClickListener() {
             @Override

@@ -51,11 +51,11 @@
 
         <Button
             android:id="@+id/accept_characters_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
             android:text="@string/accept_settings_button"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textSize="14sp" />
 
         <LinearLayout

@@ -58,6 +58,28 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
             android:textSize="14sp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/global_settings_button"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="24dp"
+                android:background="@android:drawable/ic_menu_manage" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/settings_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

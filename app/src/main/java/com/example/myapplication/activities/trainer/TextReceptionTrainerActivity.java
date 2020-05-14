@@ -108,6 +108,10 @@ public class TextReceptionTrainerActivity extends TrainerActivity
         }
     }
 
+    public void stopTextPlaying(View view) {
+        morseCodeGenerator.stopTextPlaying();
+    }
+
     private void hideTextView() {
         textTextView.setText("");
     }

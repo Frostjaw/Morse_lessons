@@ -105,6 +105,6 @@
 
     <include
         android:id="@+id/bottom_navigation"
-        layout="@layout/bottom_navigation"
+        layout="@layout/lesson_bottom_navigation"
         tools:layout_editor_absoluteY="546dp" />
 </android.support.constraint.ConstraintLayout>

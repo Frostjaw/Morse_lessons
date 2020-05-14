@@ -22,7 +22,7 @@ public class CharacterTransmissionTrainerActivity extends TrainerActivity
     protected TextView answerTextView;
     protected TextView characterTextView;
     protected Button tapperButton;
-    protected int lowerCharacterBound;
+    //protected int lowerCharacterBound;
     private DialogFragment chooseCharactersDialog;
     private DialogFragment helpDialog;
 

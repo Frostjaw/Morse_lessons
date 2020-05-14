@@ -1,6 +1,7 @@
 package com.example.myapplication.dialogs;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import com.example.myapplication.R;
+import com.example.myapplication.activities.SettingsActivity;
 
 public class ChooseCharactersDialog extends DialogFragment implements OnClickListener {
 
@@ -35,6 +37,17 @@ public class ChooseCharactersDialog extends DialogFragment implements OnClickLis
         View view = inflater.inflate(R.layout.choose_characters_dialog, null);
 
         EditText charactersEditText = view.findViewById(R.id.characters_editText);
+
+        // settings button
+
+        Button openGlobalSettingsButton = view.findViewById(R.id.global_settings_button);
+        openGlobalSettingsButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // letters
         CheckBox lettersCheckBox = view.findViewById(R.id.letters_checkBox);
@@ -231,5 +244,15 @@ public class ChooseCharactersDialog extends DialogFragment implements OnClickLis
 
         return strings;
     }
+
+    public void openGlobalSettings(View view) {
+/*        Intent intent = new Intent(getContext(), SettingsActivity.class);
+        startActivity(intent);*/
+
+/*        Intent intent = new Intent(getContext(), SettingsActivity.class);
+        startActivity(intent);*/
+    }
+
+
 
 }

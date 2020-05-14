@@ -21,7 +21,7 @@ public class MorseCodeGenerator extends Application {
     public final Map<Integer, String> morseDictionary = new HashMap<>();
     public final Map<String, Integer> inverseMorseDictionary = new HashMap<>();
     public boolean characterPoolIsEmpty;
-    private ArrayList<Integer> generatedTextIndexes;
+    public ArrayList<Integer> generatedTextIndexes;
     private final Map<Integer, Integer> delayArray = new HashMap<>();
 
     // Logs
@@ -877,6 +877,11 @@ public class MorseCodeGenerator extends Application {
         int curCharIndex = generatedTextIndexes.get(0);
         playConcrete(curCharIndex);
         handler.postDelayed(() -> playCharacterFromTextAtIndex(text, 1), dotDuration *(delayArray.get(curCharIndex) + 3));
+    }
+
+    public void stopTextPlaying() {
+        soundGenerator.stop();
+        handler.removeCallbacksAndMessages(null);
     }
 
     private void playCharacterFromTextAtIndex(String text, int index) {

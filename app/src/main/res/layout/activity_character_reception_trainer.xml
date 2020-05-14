@@ -730,6 +730,7 @@
         android:layout_height="wrap_content"
         android:onClick="startReception"
         android:text="@string/start_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/answer_textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

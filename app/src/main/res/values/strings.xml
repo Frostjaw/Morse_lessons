@@ -34,4 +34,7 @@
     <string name="create_text_button">Создать текст</string>
     <string name="group_number_title">Количество групп:</string>
     <string name="hide_text_button">Скрыть текст</string>
+    <string name="check_sound_button">Проверить</string>
+    <string name="frequency_settings_title">Частота (Гц)</string>
+    <string name="dot_duration_settings_title">Длина точки (мс)</string>
 </resources>

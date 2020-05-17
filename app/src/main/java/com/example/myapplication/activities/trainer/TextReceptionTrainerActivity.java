@@ -10,11 +10,11 @@ import android.widget.TextView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.dialogs.ChooseCharactersDialog;
-import com.example.myapplication.dialogs.ExtendedChooseCharactersDialog;
+import com.example.myapplication.dialogs.TextChooseCharactersDialog;
 
 public class TextReceptionTrainerActivity extends TrainerActivity
         implements ChooseCharactersDialog.OnCharactersSelectedListener,
-        ExtendedChooseCharactersDialog.OnGroupNumberSelectedListener {
+        TextChooseCharactersDialog.OnGroupNumberSelectedListener {
 
     private TextView textTextView;
     private TextView alertTextView;
@@ -30,7 +30,7 @@ public class TextReceptionTrainerActivity extends TrainerActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_reception_trainer);
 
-        launchActivityWithoutNavigation();
+        launchActivity();
         textTextView = findViewById(R.id.text_textView);
         textTextView.setMovementMethod(new ScrollingMovementMethod());
 
@@ -52,8 +52,8 @@ public class TextReceptionTrainerActivity extends TrainerActivity
 
     @Override
     public void onAttachFragment(Fragment fragment) {
-        if (fragment instanceof ExtendedChooseCharactersDialog) {
-            ExtendedChooseCharactersDialog dialog = (ExtendedChooseCharactersDialog) fragment;
+        if (fragment instanceof TextChooseCharactersDialog) {
+            TextChooseCharactersDialog dialog = (TextChooseCharactersDialog) fragment;
             dialog.setOnCharactersSelectedListener(this);
             dialog.setOnGroupNumberSelectedListener(this);
         }
@@ -80,11 +80,11 @@ public class TextReceptionTrainerActivity extends TrainerActivity
     }
 
     public void showSettingsDialog(View view) {
-        openExtendedChooseCharactersDialog(view);
+        openTextChooseCharactersDialog(view);
     }
 
     public void createText(View view) {
-        if (morseCodeGenerator.characterPoolIsEmpty) {
+        if (morseCodeGenerator.charactersPoolIsEmpty) {
             alertTextView.setText("Выберите символы для тренировки");
         }else if (numberOfGroups == 0) {
             alertTextView.setText("Выберите количество групп");
@@ -97,7 +97,7 @@ public class TextReceptionTrainerActivity extends TrainerActivity
     }
 
     public void startReception(View view){
-        if (morseCodeGenerator.characterPoolIsEmpty) {
+        if (morseCodeGenerator.charactersPoolIsEmpty) {
             alertTextView.setText("Выберите символы для тренировки");
         }else if (numberOfGroups == 0) {
             alertTextView.setText("Выберите количество групп");

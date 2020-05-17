@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     // rename???
     public void startLearning(View view){
-        Intent intent = new Intent(this, NavigationActivity.class);
+        Intent intent = new Intent(this, LessonNavigationActivity.class);
         startActivity(intent);
     }
 

@@ -13,7 +13,7 @@ public class Lesson7ReceptionActivity extends LessonReceptionActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson7_reception);
 
-        launchActivity();
+        launchActivityWithBottomNavigation();
         answerTextView = findViewById(R.id.answerTextView);
         lowerCharacterBound = 25;
     }

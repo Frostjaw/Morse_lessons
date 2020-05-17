@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.myapplication.activities.MyActivity;
+import com.example.myapplication.activities.SoundActivity;
 
-public abstract class LessonActivity extends MyActivity {
+public abstract class LessonActivity extends SoundActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

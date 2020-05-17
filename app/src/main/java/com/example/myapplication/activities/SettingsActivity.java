@@ -3,11 +3,12 @@ package com.example.myapplication.activities;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.example.myapplication.utils.MorseCodeGenerator;
 import com.example.myapplication.R;
+import com.example.myapplication.utils.MorseCodeGenerator;
 
 public class SettingsActivity extends AppCompatActivity {
     private TextView textViewFreq;
@@ -55,11 +56,11 @@ public class SettingsActivity extends AppCompatActivity {
         textViewDotDuration = findViewById(R.id.dotDurationTextView);
         textViewDotDuration.setText(String.valueOf(settings.getInt("DotDuration",150))); // default 150
         seekBarDotDuration = findViewById(R.id.seekBar2);
-        seekBarDotDuration.setProgress((settings.getInt("DotDuration",0)-150)/50);
+        seekBarDotDuration.setProgress((settings.getInt("DotDuration",0) - 50) / 25);
         seekBarDotDuration.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                int curDotDuration = (progress*50) + 150;
+                int curDotDuration = (progress*25) + 50;
                 textViewDotDuration.setText(String.valueOf(curDotDuration));
                 SharedPreferences.Editor prefEditor = settings.edit();
                 prefEditor.putInt("DotDuration", curDotDuration);
@@ -78,5 +79,10 @@ public class SettingsActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void checkSound(View view) {
+        MorseCodeGenerator morseCodeGenerator = MorseCodeGenerator.getMorseCodeGenerator();
+        morseCodeGenerator.play1();
     }
 }

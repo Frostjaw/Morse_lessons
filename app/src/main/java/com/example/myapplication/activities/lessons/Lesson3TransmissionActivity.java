@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.myapplication.utils.Checker;
+import com.example.myapplication.utils.TransmissionChecker;
 import com.example.myapplication.R;
 
 public class Lesson3TransmissionActivity extends LessonTransmissionActivity {
@@ -14,11 +14,11 @@ public class Lesson3TransmissionActivity extends LessonTransmissionActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson3_transmission);
 
-        launchActivity();
+        launchActivityWithBottomNavigation();
         lowerCharacterBound = 9;
         answerTextView = findViewById(R.id.answerTextView);
         characterTextView = findViewById(R.id.characterTextView);
-        checker = new Checker(answerTextView);
+        transmissionChecker = new TransmissionChecker(answerTextView);
         // Listener для кнопки
         tapperButton = findViewById(R.id.keyButton);
         setListenerOnTapperButton();

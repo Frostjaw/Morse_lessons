@@ -3,7 +3,7 @@ package com.example.myapplication.activities.lessons;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.myapplication.utils.Checker;
+import com.example.myapplication.utils.TransmissionChecker;
 import com.example.myapplication.R;
 
 import java.util.Random;
@@ -15,11 +15,11 @@ public class Lesson12TransmissionActivity extends LessonTransmissionActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson12_transmission);
 
-        launchActivity();
+        launchActivityWithBottomNavigation();
         lowerCharacterBound = 50;
         answerTextView = findViewById(R.id.answerTextView);
         characterTextView = findViewById(R.id.characterTextView);
-        checker = new Checker(answerTextView);
+        transmissionChecker = new TransmissionChecker(answerTextView);
         // Listener для кнопки
         tapperButton = findViewById(R.id.keyButton);
         setListenerOnTapperButton();

@@ -4,15 +4,15 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
 
-import com.example.myapplication.activities.MyActivity;
+import com.example.myapplication.activities.SoundActivity;
 import com.example.myapplication.dialogs.ChooseCharactersDialog;
-import com.example.myapplication.dialogs.ExtendedChooseCharactersDialog;
+import com.example.myapplication.dialogs.TextChooseCharactersDialog;
 import com.example.myapplication.dialogs.HelpDialog;
 
-public abstract class TrainerActivity extends MyActivity {
+public abstract class TrainerActivity extends SoundActivity {
 
     private DialogFragment chooseCharactersDialog;
-    private DialogFragment extendedChooseCharactersDialog;
+    private DialogFragment textChooseCharactersDialog;
     private DialogFragment helpDialog;
 
     // Logs
@@ -22,21 +22,21 @@ public abstract class TrainerActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        launchActivityWithoutNavigation();
+        launchActivity();
         chooseCharactersDialog = new ChooseCharactersDialog();
-        extendedChooseCharactersDialog = new ExtendedChooseCharactersDialog();
+        textChooseCharactersDialog = new TextChooseCharactersDialog();
         helpDialog = new HelpDialog();
     }
 
-    public void openChooseCharactersDialog(View view) {
+    protected void openChooseCharactersDialog(View view) {
         chooseCharactersDialog.show(getSupportFragmentManager(), "choose_characters_dialog");
     }
 
-    public void openExtendedChooseCharactersDialog(View view) {
-        extendedChooseCharactersDialog.show(getSupportFragmentManager(), "extended_choose_characters_dialog");
+    protected void openTextChooseCharactersDialog(View view) {
+        textChooseCharactersDialog.show(getSupportFragmentManager(), "text_choose_characters_dialog");
     }
 
-    public void openHelpDialog(View view) {
+    protected void openHelpDialog(View view) {
         helpDialog.show(getSupportFragmentManager(), "help_dialog");
     }
 }

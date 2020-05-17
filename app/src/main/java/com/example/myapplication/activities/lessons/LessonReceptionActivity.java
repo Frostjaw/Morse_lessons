@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.myapplication.activities.MyActivity;
+import com.example.myapplication.activities.SoundActivity;
 
 import java.util.Random;
 
-public abstract class LessonReceptionActivity extends MyActivity {
+public abstract class LessonReceptionActivity extends SoundActivity {
     protected int curCharacter;
     protected TextView answerTextView;
     protected int lowerCharacterBound;
@@ -22,7 +22,7 @@ public abstract class LessonReceptionActivity extends MyActivity {
     public void startReception(View view){
         Random random = new Random();
         curCharacter = random.nextInt(4) + lowerCharacterBound; // 4 - верхняя граница диапазона (0-4)
-        morseCodeGenerator.playConcrete(curCharacter);
+        morseCodeGenerator.playCharacter(curCharacter);
     }
 
     public void next(View view){

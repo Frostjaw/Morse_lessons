@@ -15,7 +15,7 @@
         <activity android:name=".activities.trainer.CharacterTransmissionTrainerActivity" />
         <activity android:name=".activities.trainer.CharacterReceptionTrainerActivity" />
         <activity android:name=".activities.trainer.MainTrainerActivity" />
-        <activity android:name=".activities.NavigationActivity" />
+        <activity android:name=".activities.LessonNavigationActivity" />
         <activity android:name=".activities.lessons.Lesson12TransmissionActivity" />
         <activity android:name=".activities.lessons.Lesson12ReceptionActivity" />
         <activity android:name=".activities.lessons.Lesson12LearningActivity" />

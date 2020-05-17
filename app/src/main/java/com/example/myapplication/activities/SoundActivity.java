@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.myapplication.utils.MorseCodeGenerator;
 import com.example.myapplication.R;
 
-public abstract class MyActivity extends AppCompatActivity {
+public abstract class SoundActivity extends AppCompatActivity {
     protected Handler handler;
     protected SharedPreferences settings;
     protected int frequency;
@@ -28,18 +28,14 @@ public abstract class MyActivity extends AppCompatActivity {
         frequency = settings.getInt("Frequency",1000);
         unitOfTime = settings.getInt("DotDuration", 150);
         morseCodeGenerator = MorseCodeGenerator.getMorseCodeGenerator();
+    }
+
+    protected void launchActivityWithBottomNavigation(){
+        launchActivity();
         launchBottomNavigation();
     }
 
-    protected void launchActivityWithoutNavigation(){
-        handler = new Handler();
-        settings = getSharedPreferences("userSettings", MODE_PRIVATE);
-        frequency = settings.getInt("Frequency",1000);
-        unitOfTime = settings.getInt("DotDuration", 150);
-        morseCodeGenerator = MorseCodeGenerator.getMorseCodeGenerator();
-    }
-
-    public void launchBottomNavigation(){
+    protected void launchBottomNavigation(){
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 item -> {
@@ -50,7 +46,7 @@ public abstract class MyActivity extends AppCompatActivity {
                         case R.id.action_settings:
                             openSettings();
                             break;
-                        /*case R.id.action_menu:
+/*                        case R.id.action_menu:
                             openMenu();
                             break;*/
                         case R.id.action_dictionary:
@@ -62,7 +58,7 @@ public abstract class MyActivity extends AppCompatActivity {
     }
 
     public void openNavigation(){
-        Intent intent = new Intent(this, NavigationActivity.class);
+        Intent intent = new Intent(this, LessonNavigationActivity.class);
         startActivity(intent);
     }
 
@@ -71,7 +67,7 @@ public abstract class MyActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*public void openMenu(){
+/*    public void openMenu(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }*/

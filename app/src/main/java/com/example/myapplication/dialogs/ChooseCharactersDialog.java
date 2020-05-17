@@ -244,14 +244,4 @@ public class ChooseCharactersDialog extends DialogFragment implements OnClickLis
         return strings;
     }
 
-    public void openGlobalSettings(View view) {
-/*        Intent intent = new Intent(getContext(), SettingsActivity.class);
-        startActivity(intent);*/
-
-/*        Intent intent = new Intent(getContext(), SettingsActivity.class);
-        startActivity(intent);*/
-    }
-
-
-
 }

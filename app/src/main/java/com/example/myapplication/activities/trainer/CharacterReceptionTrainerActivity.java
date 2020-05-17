@@ -12,7 +12,7 @@ import com.example.myapplication.dialogs.HelpDialog;
 public class CharacterReceptionTrainerActivity extends TrainerActivity
         implements ChooseCharactersDialog.OnCharactersSelectedListener {
 
-    public int curCharacter;
+    private int curCharacter;
     private TextView answerTextView;
 
     // Logs
@@ -23,7 +23,7 @@ public class CharacterReceptionTrainerActivity extends TrainerActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_reception_trainer);
 
-        launchActivityWithoutNavigation();
+        launchActivity();
         answerTextView = findViewById(R.id.answer_textView);
     }
 
@@ -57,7 +57,7 @@ public class CharacterReceptionTrainerActivity extends TrainerActivity
 
     public void buttonPressed(View view) {
 
-        if (!morseCodeGenerator.characterPoolIsEmpty){
+        if (!morseCodeGenerator.charactersPoolIsEmpty){
             String buttonId = getResources().getResourceEntryName(view.getId());
             String buttonIdString = buttonId.replaceAll("button_", "");
             int buttonNumber = Integer.parseInt(buttonIdString);
@@ -77,7 +77,7 @@ public class CharacterReceptionTrainerActivity extends TrainerActivity
     }
 
     public void showHelpDialog(View view) {
-        if (!morseCodeGenerator.characterPoolIsEmpty) {
+        if (!morseCodeGenerator.charactersPoolIsEmpty) {
             openHelpDialog(view);
         }else{
             answerTextView.setText("Выберите символы для тренировки");
@@ -85,20 +85,22 @@ public class CharacterReceptionTrainerActivity extends TrainerActivity
     }
 
     public void startReception(View view){
-        if (morseCodeGenerator.characterPoolIsEmpty) {
+        if (morseCodeGenerator.charactersPoolIsEmpty) {
             answerTextView.setText("Выберите символы для тренировки");
         }else{
             answerTextView.setText("");
-            curCharacter = morseCodeGenerator.getAndPlayCharacterFromPool();
+
+            curCharacter = morseCodeGenerator.getRandomCharacterFromPool();
+            morseCodeGenerator.playCharacter(curCharacter);
         }
     }
 
     public void repeatCharacter(View view){
-        if (morseCodeGenerator.characterPoolIsEmpty) {
+        if (morseCodeGenerator.charactersPoolIsEmpty) {
             answerTextView.setText("Выберите символы для тренировки");
         }else{
             answerTextView.setText("");
-            morseCodeGenerator.playConcrete(curCharacter);
+            morseCodeGenerator.playCharacter(curCharacter);
         }
     }
 

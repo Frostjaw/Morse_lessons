@@ -13,7 +13,7 @@ import android.widget.EditText;
 import com.example.myapplication.R;
 import com.example.myapplication.activities.SettingsActivity;
 
-public class ExtendedChooseCharactersDialog extends ChooseCharactersDialog {
+public class TextChooseCharactersDialog extends ChooseCharactersDialog {
 
     OnGroupNumberSelectedListener groupNumberCallback;
 
@@ -28,7 +28,7 @@ public class ExtendedChooseCharactersDialog extends ChooseCharactersDialog {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.extended_choose_characters_dialog, null);
+        View view = inflater.inflate(R.layout.text_choose_characters_dialog, null);
 
         EditText charactersEditText = view.findViewById(R.id.characters_editText);
         EditText groupNumberEditText = view.findViewById(R.id.group_number_editText);

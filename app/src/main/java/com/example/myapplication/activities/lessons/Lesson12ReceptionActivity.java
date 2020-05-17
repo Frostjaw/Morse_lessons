@@ -15,7 +15,7 @@ public class Lesson12ReceptionActivity extends LessonReceptionActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson12_reception);
 
-        launchActivity();
+        launchActivityWithBottomNavigation();
         answerTextView = findViewById(R.id.answerTextView);
         lowerCharacterBound = 50;
     }
@@ -24,7 +24,7 @@ public class Lesson12ReceptionActivity extends LessonReceptionActivity {
     public void startReception(View view){
         Random random = new Random();
         curCharacter = random.nextInt(7) + lowerCharacterBound;
-        morseCodeGenerator.playConcrete(curCharacter);
+        morseCodeGenerator.playCharacter(curCharacter);
     }
 
     @Override

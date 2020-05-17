@@ -19,7 +19,7 @@ import com.example.myapplication.activities.lessons.Lesson7Activity;
 import com.example.myapplication.activities.lessons.Lesson8Activity;
 import com.example.myapplication.activities.lessons.Lesson9Activity;
 
-public class NavigationActivity extends AppCompatActivity {
+public class LessonNavigationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

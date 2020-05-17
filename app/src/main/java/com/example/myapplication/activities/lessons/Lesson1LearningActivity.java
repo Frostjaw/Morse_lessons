@@ -12,7 +12,7 @@ public class Lesson1LearningActivity extends LessonLearningActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson1_learning);
 
-        launchActivity();
+        launchActivityWithBottomNavigation();
     }
 
     @Override

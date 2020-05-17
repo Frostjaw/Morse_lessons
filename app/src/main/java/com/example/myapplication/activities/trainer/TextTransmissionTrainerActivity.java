@@ -2,7 +2,6 @@ package com.example.myapplication.activities.trainer;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
 import android.view.MotionEvent;
@@ -12,20 +11,19 @@ import android.widget.TextView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.dialogs.ChooseCharactersDialog;
-import com.example.myapplication.dialogs.ExtendedChooseCharactersDialog;
-import com.example.myapplication.utils.Checker;
+import com.example.myapplication.dialogs.TextChooseCharactersDialog;
+import com.example.myapplication.utils.TransmissionChecker;
 
 public class TextTransmissionTrainerActivity extends TrainerActivity
         implements ChooseCharactersDialog.OnCharactersSelectedListener,
-        ExtendedChooseCharactersDialog.OnGroupNumberSelectedListener {
+        TextChooseCharactersDialog.OnGroupNumberSelectedListener {
 
     protected int curCharacter = 0;
-    protected Checker checker;
+    protected TransmissionChecker transmissionChecker;
     protected TextView answerTextView;
     private TextView textTextView;
     protected Button tapperButton;
     protected int lowerCharacterBound;
-    private DialogFragment chooseCharactersDialog;
     private int numberOfGroups = 0;
     private String currentText;
     private int isCurrentCharFinished = 0;
@@ -39,13 +37,13 @@ public class TextTransmissionTrainerActivity extends TrainerActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_transmission_trainer);
 
-        launchActivityWithoutNavigation();
+        launchActivity();
 
         answerTextView = findViewById(R.id.answer_textView);
         textTextView = findViewById(R.id.text_textView);
         textTextView.setMovementMethod(new ScrollingMovementMethod());
 
-        checker = new Checker(answerTextView);
+        transmissionChecker = new TransmissionChecker(answerTextView);
         // Listener для кнопки
         tapperButton = findViewById(R.id.key_button);
         setListenerOnTapperButton();
@@ -53,8 +51,8 @@ public class TextTransmissionTrainerActivity extends TrainerActivity
 
     @Override
     public void onAttachFragment(Fragment fragment) {
-        if (fragment instanceof ExtendedChooseCharactersDialog) {
-            ExtendedChooseCharactersDialog dialog = (ExtendedChooseCharactersDialog) fragment;
+        if (fragment instanceof TextChooseCharactersDialog) {
+            TextChooseCharactersDialog dialog = (TextChooseCharactersDialog) fragment;
             dialog.setOnCharactersSelectedListener(this);
             dialog.setOnGroupNumberSelectedListener(this);
         }
@@ -88,7 +86,7 @@ public class TextTransmissionTrainerActivity extends TrainerActivity
                     long totalTime = System.currentTimeMillis() - startTime;
                     if ((totalTime > 0) && (totalTime < 250)){ // погрешность
                         if (curCharacter != 0) {
-                            isCurrentCharFinished = checker.checkCharacterInText(curCharacter, 0);
+                            isCurrentCharFinished = transmissionChecker.checkCharacterInText(curCharacter, 0);
                             if (isCurrentCharFinished == 1) {
                                 currentCharIndex++;
                                 if (currentCharIndex < morseCodeGenerator.generatedTextIndexes.size()) {
@@ -110,7 +108,7 @@ public class TextTransmissionTrainerActivity extends TrainerActivity
                         }
                     }else if((totalTime > 300) && (totalTime < 1000)){
                         if (curCharacter != 0) {
-                            isCurrentCharFinished = checker.checkCharacterInText(curCharacter,1);
+                            isCurrentCharFinished = transmissionChecker.checkCharacterInText(curCharacter,1);
                             if (isCurrentCharFinished == 1) {
                                 currentCharIndex++;
                                 if (currentCharIndex < morseCodeGenerator.generatedTextIndexes.size()) {
@@ -162,7 +160,7 @@ public class TextTransmissionTrainerActivity extends TrainerActivity
     }
 
     public void createText(View view) {
-        if (morseCodeGenerator.characterPoolIsEmpty) {
+        if (morseCodeGenerator.charactersPoolIsEmpty) {
             answerTextView.setText("Выберите символы для тренировки");
         }else if (numberOfGroups == 0) {
             answerTextView.setText("Выберите количество групп");
@@ -182,7 +180,7 @@ public class TextTransmissionTrainerActivity extends TrainerActivity
 
     public void restartListener(View view) {
 
-        if (morseCodeGenerator.characterPoolIsEmpty) {
+        if (morseCodeGenerator.charactersPoolIsEmpty) {
             answerTextView.setText("Выберите символы для тренировки");
         }else if (numberOfGroups == 0) {
             answerTextView.setText("Выберите количество групп");
@@ -193,6 +191,6 @@ public class TextTransmissionTrainerActivity extends TrainerActivity
     }
 
     public void showSettingsDialog(View view) {
-        openExtendedChooseCharactersDialog(view);
+        openTextChooseCharactersDialog(view);
     }
 }

@@ -3,14 +3,14 @@ package com.example.myapplication.utils;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
-public class Checker {
-    private TextView _textView;
+public class TransmissionChecker {
+    private TextView answerTextView;
     private int counter;
     private int[] characterCode;
     private CountDownTimer timer;
 
-    public Checker(TextView textview){
-        _textView = textview;
+    public TransmissionChecker(TextView textview){
+        answerTextView = textview;
         counter = 0;
 
         timer = new CountDownTimer(1000, 1000) {
@@ -19,7 +19,7 @@ public class Checker {
             }
 
             public void onFinish() {
-                _textView.setText("Неверно");
+                answerTextView.setText("Неверно");
                 counter = 0;
             }
         };
@@ -253,19 +253,20 @@ public class Checker {
                 break;
         }
 
+
         timer.cancel();
         if (counter < characterCode.length) {
             if (curCode == characterCode[counter]) {
                 counter++;
                 timer.start();
                 if (counter == characterCode.length) {
-                    _textView.setText("Верно");
+                    answerTextView.setText("Верно");
                     counter = 0;
                     timer.cancel();
                 }
             } else {
                 counter = 0;
-                _textView.setText("Неверно");
+                answerTextView.setText("Неверно");
             }
         }
     }
@@ -498,7 +499,7 @@ public class Checker {
                 break;
         }
 
-        int test = 0;
+        int isCharacterEnded = 0;
 
         timer.cancel();
         if (counter < characterCode.length) {
@@ -506,20 +507,20 @@ public class Checker {
                 counter++;
                 timer.start();
                 if (counter == characterCode.length) {
-                    _textView.setText("Верно");
+                    answerTextView.setText("Верно");
                     counter = 0;
                     timer.cancel();
 
-                    test = 1;
+                    isCharacterEnded = 1;
                 }
             } else {
                 counter = 0;
-                _textView.setText("Неверно");
+                answerTextView.setText("Неверно");
 
-                test = 1;
+                isCharacterEnded = 1;
             }
         }
 
-        return test;
+        return isCharacterEnded;
     }
 }

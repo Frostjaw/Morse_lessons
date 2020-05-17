@@ -2,7 +2,6 @@ package com.example.myapplication.activities.trainer;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,19 +11,16 @@ import android.widget.TextView;
 import com.example.myapplication.R;
 import com.example.myapplication.dialogs.ChooseCharactersDialog;
 import com.example.myapplication.dialogs.HelpDialog;
-import com.example.myapplication.utils.Checker;
+import com.example.myapplication.utils.TransmissionChecker;
 
 public class CharacterTransmissionTrainerActivity extends TrainerActivity
         implements ChooseCharactersDialog.OnCharactersSelectedListener {
 
-    protected int curCharacter;
-    protected Checker checker;
-    protected TextView answerTextView;
-    protected TextView characterTextView;
-    protected Button tapperButton;
-    //protected int lowerCharacterBound;
-    private DialogFragment chooseCharactersDialog;
-    private DialogFragment helpDialog;
+    private int curCharacter;
+    private TransmissionChecker transmissionChecker;
+    private TextView answerTextView;
+    private TextView characterTextView;
+    private Button tapperButton;
 
     // Logs
     final String LOG_TAG = "myLogs";
@@ -34,14 +30,12 @@ public class CharacterTransmissionTrainerActivity extends TrainerActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_transmission_trainer);
 
-        launchActivityWithoutNavigation();
-        chooseCharactersDialog = new ChooseCharactersDialog();
-        helpDialog = new HelpDialog();
+        launchActivity();
 
         characterTextView = findViewById(R.id.character_textView);
         answerTextView = findViewById(R.id.answer_textView);
 
-        checker = new Checker(answerTextView);
+        transmissionChecker = new TransmissionChecker(answerTextView);
         // Listener для кнопки
         tapperButton = findViewById(R.id.key_button);
         setListenerOnTapperButton();
@@ -81,7 +75,7 @@ public class CharacterTransmissionTrainerActivity extends TrainerActivity
     }
 
     public void showHelpDialog(View view) {
-        if (!morseCodeGenerator.characterPoolIsEmpty) {
+        if (!morseCodeGenerator.charactersPoolIsEmpty) {
             openHelpDialog(view);
         }else{
             answerTextView.setText("Выберите символы для тренировки");
@@ -89,7 +83,7 @@ public class CharacterTransmissionTrainerActivity extends TrainerActivity
     }
 
     public void startTransmission(View view) {
-        if (morseCodeGenerator.characterPoolIsEmpty) {
+        if (morseCodeGenerator.charactersPoolIsEmpty) {
             answerTextView.setText("Выберите символы для тренировки");
         }else{
             curCharacter = morseCodeGenerator.getRandomCharacterFromPool();
@@ -111,10 +105,10 @@ public class CharacterTransmissionTrainerActivity extends TrainerActivity
                     long totalTime = System.currentTimeMillis() - startTime;
                     if ((totalTime > 0) && (totalTime < 250)){ // погрешность
                         if (curCharacter != 0) {
-                            checker.check(curCharacter, 0);
+                            transmissionChecker.check(curCharacter, 0);
                         }
                     }else if((totalTime > 300) && (totalTime < 1000)){
-                        if (curCharacter != 0) checker.check(curCharacter,1);
+                        if (curCharacter != 0) transmissionChecker.check(curCharacter,1);
                     } else {
                         answerTextView.setText("Неверно");
                     }

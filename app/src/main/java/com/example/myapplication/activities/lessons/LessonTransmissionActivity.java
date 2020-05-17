@@ -9,13 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.myapplication.activities.trainer.TrainerActivity;
-import com.example.myapplication.utils.Checker;
+import com.example.myapplication.utils.TransmissionChecker;
 
 import java.util.Random;
 
 public abstract class LessonTransmissionActivity extends TrainerActivity {
     protected int curCharacter;
-    protected Checker checker;
+    protected TransmissionChecker transmissionChecker;
     protected TextView answerTextView;
     protected TextView characterTextView;
     protected Button tapperButton;
@@ -40,10 +40,12 @@ public abstract class LessonTransmissionActivity extends TrainerActivity {
                     long totalTime = System.currentTimeMillis() - startTime;
                     if ((totalTime > 0) && (totalTime < 250)){ // погрешность
                         if (curCharacter != 0) {
-                            checker.check(curCharacter, 0);
+                            transmissionChecker.check(curCharacter, 0);
                         }
                     }else if((totalTime > 300) && (totalTime < 1000)){
-                        if (curCharacter != 0) checker.check(curCharacter,1);
+                        if (curCharacter != 0) {
+                            transmissionChecker.check(curCharacter,1);
+                        }
                     } else {
                         answerTextView.setText("Неверно");
                     }

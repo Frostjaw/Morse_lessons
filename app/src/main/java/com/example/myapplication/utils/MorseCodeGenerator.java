@@ -17,12 +17,12 @@ public class MorseCodeGenerator extends Application {
     private SoundGenerator soundGenerator;
     private int dotDuration;
     private Handler handler;
-    private ArrayList<Integer> characterIndexPool;
+    private ArrayList<Integer> charactersIndexPool;
+    public ArrayList<Integer> generatedTextIndexes;
+    public boolean charactersPoolIsEmpty;
     public final Map<Integer, String> morseDictionary = new HashMap<>();
     public final Map<String, Integer> inverseMorseDictionary = new HashMap<>();
-    public boolean characterPoolIsEmpty;
-    public ArrayList<Integer> generatedTextIndexes;
-    private final Map<Integer, Integer> delayArray = new HashMap<>();
+    private final Map<Integer, Integer> delaysArray = new HashMap<>();
 
     // Logs
     final String LOG_TAG = "myLogs";
@@ -37,9 +37,9 @@ public class MorseCodeGenerator extends Application {
         soundGenerator = new SoundGenerator(frequency);
         dotDuration = settings.getInt("DotDuration", 150);
         handler = new Handler();
-        characterIndexPool = new ArrayList<>();
+        charactersIndexPool = new ArrayList<>();
         generatedTextIndexes = new ArrayList<>();
-        characterPoolIsEmpty = true;
+        charactersPoolIsEmpty = true;
 
         initDelayArray();
         initMorseDictionary();
@@ -765,7 +765,7 @@ public class MorseCodeGenerator extends Application {
         handler.postDelayed(() -> soundGenerator.stop(), dotDuration *13);
     }
 
-    public void playConcrete(int num){
+    public void playCharacter(int num){
 
         Class c = this.getClass();
         String methodName = "play" + num;
@@ -786,16 +786,16 @@ public class MorseCodeGenerator extends Application {
 
     public void setCharacterPoolForGeneration(char[] charArray) {
 
-        characterIndexPool.clear();
+        charactersIndexPool.clear();
 
         if (charArray.length == 0) {
-            characterPoolIsEmpty = true;
+            charactersPoolIsEmpty = true;
         }else {
             for (char character:charArray) {
                 String curCharacter = Character.toString(character).toUpperCase();
-                characterIndexPool.add(inverseMorseDictionary.get(curCharacter));
+                charactersIndexPool.add(inverseMorseDictionary.get(curCharacter));
             }
-            characterPoolIsEmpty = false;
+            charactersPoolIsEmpty = false;
         }
     }
 
@@ -822,32 +822,19 @@ public class MorseCodeGenerator extends Application {
                         curCharacter = Character.toString(character).toUpperCase();
                         break;
                 }
-                characterIndexPool.add(inverseMorseDictionary.get(curCharacter));
+                charactersIndexPool.add(inverseMorseDictionary.get(curCharacter));
             }
-            characterPoolIsEmpty = false;
+            charactersPoolIsEmpty = false;
         }
-    }
-
-    public int getAndPlayCharacterFromPool() {
-
-        if (!characterIndexPool.isEmpty()) {
-            Random random = new Random();
-            int curIndex = random.nextInt(characterIndexPool.size());
-            playConcrete(characterIndexPool.get(curIndex));
-
-            return characterIndexPool.get(curIndex);
-        }
-
-        return -1;
     }
 
     public int getRandomCharacterFromPool() {
 
-        if (!characterIndexPool.isEmpty()) {
+        if (!charactersIndexPool.isEmpty()) {
             Random random = new Random();
-            int curIndex = random.nextInt(characterIndexPool.size());
+            int curIndex = random.nextInt(charactersIndexPool.size());
 
-            return characterIndexPool.get(curIndex);
+            return charactersIndexPool.get(curIndex);
         }
 
         return -1;
@@ -856,12 +843,12 @@ public class MorseCodeGenerator extends Application {
     public String generateRandomText(int numberOfGroups) {
         generatedTextIndexes.clear();
         StringBuilder text = new StringBuilder();
-        if (!characterIndexPool.isEmpty()) {
+        if (!charactersIndexPool.isEmpty()) {
             Random random = new Random();
             for (int i = 0; i < numberOfGroups; i++) {
                 for (int j = 0; j < 5; j++) {
-                    int curIndex = random.nextInt(characterIndexPool.size());
-                    int curCharacterIndex = characterIndexPool.get(curIndex);
+                    int curIndex = random.nextInt(charactersIndexPool.size());
+                    int curCharacterIndex = charactersIndexPool.get(curIndex);
 
                     generatedTextIndexes.add(curCharacterIndex);
                     text.append(morseDictionary.get(curCharacterIndex));
@@ -875,8 +862,8 @@ public class MorseCodeGenerator extends Application {
 
     public void playText(String text) {
         int curCharIndex = generatedTextIndexes.get(0);
-        playConcrete(curCharIndex);
-        handler.postDelayed(() -> playCharacterFromTextAtIndex(text, 1), dotDuration *(delayArray.get(curCharIndex) + 3));
+        playCharacter(curCharIndex);
+        handler.postDelayed(() -> playCharacterFromTextAtIndex(1), dotDuration *(delaysArray.get(curCharIndex) + 3));
     }
 
     public void stopTextPlaying() {
@@ -884,17 +871,17 @@ public class MorseCodeGenerator extends Application {
         handler.removeCallbacksAndMessages(null);
     }
 
-    private void playCharacterFromTextAtIndex(String text, int index) {
+    private void playCharacterFromTextAtIndex(int index) {
         int curCharIndex = generatedTextIndexes.get(index);
         int nextIndex = index + 1;
         if (curCharIndex != -1) {
-            playConcrete(curCharIndex);
+            playCharacter(curCharIndex);
 
             if (nextIndex < generatedTextIndexes.size()){
-                handler.postDelayed(() -> playCharacterFromTextAtIndex(text, nextIndex), dotDuration *(delayArray.get(curCharIndex) + 3));
+                handler.postDelayed(() -> playCharacterFromTextAtIndex(nextIndex), dotDuration *(delaysArray.get(curCharIndex) + 3));
             }
         } else if (nextIndex < generatedTextIndexes.size()){
-            handler.postDelayed(() -> playCharacterFromTextAtIndex(text, nextIndex), dotDuration *5);
+            handler.postDelayed(() -> playCharacterFromTextAtIndex(nextIndex), dotDuration *5);
         }
     }
 
@@ -906,64 +893,63 @@ public class MorseCodeGenerator extends Application {
         soundGenerator.stop();
     }
 
-    //test
     private void initDelayArray() {
-        delayArray.put(1, 5);
-        delayArray.put(2, 9);
-        delayArray.put(3, 9);
-        delayArray.put(4, 9);
-        delayArray.put(5, 7);
-        delayArray.put(6, 1);
-        delayArray.put(7, 9);
-        delayArray.put(8, 11);
-        delayArray.put(9, 3);
-        delayArray.put(10, 13);
-        delayArray.put(11, 9);
-        delayArray.put(12, 9);
-        delayArray.put(13, 7);
-        delayArray.put(14, 5);
-        delayArray.put(15, 11);
-        delayArray.put(16, 11);
-        delayArray.put(17, 7);
-        delayArray.put(18, 5);
-        delayArray.put(19, 3);
-        delayArray.put(20, 7);
-        delayArray.put(21, 9);
-        delayArray.put(22, 7);
-        delayArray.put(23, 11);
-        delayArray.put(24, 13);
-        delayArray.put(25, 15);
-        delayArray.put(26, 13);
-        delayArray.put(27, 13);
-        delayArray.put(28, 11);
-        delayArray.put(29, 11);
-        delayArray.put(30, 11);
-        delayArray.put(31, 11);
-        delayArray.put(32, 17);
-        delayArray.put(33, 15);
-        delayArray.put(34, 13);
-        delayArray.put(35, 11);
-        delayArray.put(36, 9);
-        delayArray.put(37, 11);
-        delayArray.put(38, 13);
-        delayArray.put(39, 15);
-        delayArray.put(40, 17);
-        delayArray.put(41, 19);
-        delayArray.put(42, 11);
-        delayArray.put(43, 17);
-        delayArray.put(44, 17);
-        delayArray.put(45, 17);
-        delayArray.put(46, 19);
-        delayArray.put(47, 19);
-        delayArray.put(48, 15);
-        delayArray.put(49, 15);
-        delayArray.put(50, 13);
-        delayArray.put(51, 15);
-        delayArray.put(52, 19);
-        delayArray.put(53, 13);
-        delayArray.put(54, 15);
-        delayArray.put(55, 17);
-        delayArray.put(56, 13);
+        delaysArray.put(1, 5);
+        delaysArray.put(2, 9);
+        delaysArray.put(3, 9);
+        delaysArray.put(4, 9);
+        delaysArray.put(5, 7);
+        delaysArray.put(6, 1);
+        delaysArray.put(7, 9);
+        delaysArray.put(8, 11);
+        delaysArray.put(9, 3);
+        delaysArray.put(10, 13);
+        delaysArray.put(11, 9);
+        delaysArray.put(12, 9);
+        delaysArray.put(13, 7);
+        delaysArray.put(14, 5);
+        delaysArray.put(15, 11);
+        delaysArray.put(16, 11);
+        delaysArray.put(17, 7);
+        delaysArray.put(18, 5);
+        delaysArray.put(19, 3);
+        delaysArray.put(20, 7);
+        delaysArray.put(21, 9);
+        delaysArray.put(22, 7);
+        delaysArray.put(23, 11);
+        delaysArray.put(24, 13);
+        delaysArray.put(25, 15);
+        delaysArray.put(26, 13);
+        delaysArray.put(27, 13);
+        delaysArray.put(28, 11);
+        delaysArray.put(29, 11);
+        delaysArray.put(30, 11);
+        delaysArray.put(31, 11);
+        delaysArray.put(32, 17);
+        delaysArray.put(33, 15);
+        delaysArray.put(34, 13);
+        delaysArray.put(35, 11);
+        delaysArray.put(36, 9);
+        delaysArray.put(37, 11);
+        delaysArray.put(38, 13);
+        delaysArray.put(39, 15);
+        delaysArray.put(40, 17);
+        delaysArray.put(41, 19);
+        delaysArray.put(42, 11);
+        delaysArray.put(43, 17);
+        delaysArray.put(44, 17);
+        delaysArray.put(45, 17);
+        delaysArray.put(46, 19);
+        delaysArray.put(47, 19);
+        delaysArray.put(48, 15);
+        delaysArray.put(49, 15);
+        delaysArray.put(50, 13);
+        delaysArray.put(51, 15);
+        delaysArray.put(52, 19);
+        delaysArray.put(53, 13);
+        delaysArray.put(54, 15);
+        delaysArray.put(55, 17);
+        delaysArray.put(56, 13);
     }
 
     private void initMorseDictionary() {

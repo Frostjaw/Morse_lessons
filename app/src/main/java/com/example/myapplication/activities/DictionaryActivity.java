@@ -5,14 +5,14 @@ import android.view.View;
 
 import com.example.myapplication.R;
 
-public class DictionaryActivity extends MyActivity {
+public class DictionaryActivity extends SoundActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dictionary);
 
-        launchActivityWithoutNavigation();
+        launchActivity();
     }
 
     public void play1(View view){

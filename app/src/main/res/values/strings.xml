@@ -37,4 +37,5 @@
     <string name="check_sound_button">Проверить</string>
     <string name="frequency_settings_title">Частота (Гц)</string>
     <string name="dot_duration_settings_title">Длина точки (мс)</string>
+    <string name="tap_button">Tap</string>
 </resources>
